@@ -8,18 +8,18 @@ public class Student {
 	private String grade;
 	private double tuition;
 	private double feesTotal;
-	
+
 	public Student() {
-		
+
 	}
-	
+
 	public Student(int id, String name, String grade, double tuition) {
 		this.id = id;
 		this.name = name;
 		this.grade = grade;
 		this.tuition = tuition;
-	}	
-	
+	}
+
 	public double getTuition() {
 		return tuition;
 	}
@@ -33,7 +33,7 @@ public class Student {
 		return "Student [id=" + id + ", name=" + name + ", grade=" + grade + ", tuition=" + tuition + ", feesTotal="
 				+ feesTotal + "] \n";
 	}
-	
-	
-	
+
 }
+
+

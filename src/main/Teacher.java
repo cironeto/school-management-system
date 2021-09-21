@@ -1,9 +1,9 @@
 package main;
 
 public class Teacher {
-	private int id;
 	private String name;
 	private double salary;
+//	private String courses;
 	
 	
 	
@@ -11,8 +11,7 @@ public class Teacher {
 	}
 
 
-	public Teacher(int id, String name, double salary) {
-		this.id = id;
+	public Teacher(String name, double salary) {
 		this.name = name;
 		this.salary = salary;
 	}
@@ -29,7 +28,7 @@ public class Teacher {
 
 	@Override
 	public String toString() {
-		return "Teacher [id=" + id + ", name=" + name + ", salary=" + salary + "]";
+		return "Teacher [name=" + name + ", salary=" + salary + "]";
 	}
 	
 	

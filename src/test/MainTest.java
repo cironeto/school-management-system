@@ -5,6 +5,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Scanner;
 
+import main.Course;
 import main.School;
 import main.Secretary;
 import main.Seller;
@@ -46,17 +47,17 @@ public class MainTest {
 					System.out.println("3 - Change my info");
 					System.out.println("4 - Exit");
 					System.out.println("=======================================");
-					
+
 					switch (option) {
 					case 1:
 					case 2:
 					case 3:
 					case 4:
 					default:
-						
+
 					}
-				
-					}while(option != 4);
+
+				} while (option != 4);
 			case 2:
 				do {
 					System.out.println("=======================================");
@@ -65,17 +66,17 @@ public class MainTest {
 					System.out.println("3 - Change my info");
 					System.out.println("4 - Exit");
 					System.out.println("=======================================");
-					
+
 					switch (option) {
 					case 1:
 					case 2:
 					case 3:
 					case 4:
 					default:
-						
+
 					}
-				
-					}while(option != 4);
+
+				} while (option != 4);
 			case 3:
 				do {
 					System.out.println("=======================================");
@@ -84,18 +85,20 @@ public class MainTest {
 					System.out.println("3 - Change my info");
 					System.out.println("4 - Exit");
 					System.out.println("=======================================");
-					
+
 					switch (option) {
 					case 1:
 					case 2:
 					case 3:
 					case 4:
 					default:
-						
+
 					}
-				
-					}while(option != 4);
+
+				} while (option != 4);
 			case 4:
+				int optionSeller = 0;
+				
 				do {
 					System.out.println("=======================================");
 					System.out.println("1 - Sign up a student");
@@ -104,19 +107,36 @@ public class MainTest {
 					System.out.println("4 - Exit");
 					System.out.println("=======================================");
 					
-					switch (option) {
-					case 1:
-					case 2:
-					case 3:
-					case 4:
-					default:
-						
-					}
-				
-					}while(option != 4);
-				
+					optionSeller = input.nextInt();
 
-		} 
-		}while (option != 5);
-}
+					switch (optionSeller) {
+					case 1:
+						System.out.println("Name: ");
+						String name = input.next();
+						System.out.println("Registration Fee: ");
+						double regFee = input.nextDouble();
+						System.out.println("Tuition: ");
+						double tuition = input.nextDouble();
+						System.out.println("Course: ");
+						String course = input.next();
+						
+						Student student = new Student(name, regFee, tuition, course);
+						break;
+
+					case 2:
+						break;
+					case 3:
+						break;
+					case 4:
+						break;
+					default:
+						break;
+
+					}
+
+				} while (option != 4);
+
+			}
+		} while (option != 5);
+	}
 }

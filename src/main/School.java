@@ -21,6 +21,7 @@ public class School {
 		this.students = students;
 	}
 	
+
 	@Override
 	public String toString() {
 		return "School [teachers=" + teachers + ", students=" + students + ", moneyEarned=" + moneyEarned

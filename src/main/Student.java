@@ -1,5 +1,6 @@
 package main;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Student {
@@ -8,9 +9,9 @@ public class Student {
 	private double tuition;
 	private double registrationFee;
 	private double[] grade;
-	private Course course;
+	private String course;
 
-	public Student(String name, double tuition, double registrationFee, Course course) {
+	public Student(String name, double tuition, double registrationFee, String course) {
 		this.name = name;
 		this.tuition = tuition;
 		this.registrationFee = registrationFee;
@@ -19,6 +20,12 @@ public class Student {
 
 	public Student() {
 
+	}
+
+	@Override
+	public String toString() {
+		return "Student [id=" + id + ", name=" + name + ", tuition=" + tuition + ", registrationFee=" + registrationFee
+				+ ", grade=" + Arrays.toString(grade) + ", course=" + course + "]";
 	}
 
 	

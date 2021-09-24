@@ -16,11 +16,14 @@ public class MainTest {
 	public static void main(String[] args) {
 
 		Scanner input = new Scanner(System.in);
+
 		School school = new School();
+
 		List<Student> students = new ArrayList<>();
 		List<Teacher> teachers = new ArrayList<>();
 		List<Seller> sellers = new ArrayList<>();
 		List<Secretary> secretaries = new ArrayList<>();
+		List<Course> courses = new ArrayList<>();
 
 		int option = 0;
 
@@ -78,6 +81,7 @@ public class MainTest {
 
 				} while (option != 4);
 			case 3:
+				int optionSecretary = 0;
 				do {
 					System.out.println("=======================================");
 					System.out.println("1 - See all the studentes");
@@ -86,19 +90,24 @@ public class MainTest {
 					System.out.println("4 - Exit");
 					System.out.println("=======================================");
 
-					switch (option) {
+					optionSecretary = input.nextInt();
+					
+					switch (optionSecretary) {
 					case 1:
+						System.out.println(students);
+						break;
 					case 2:
 					case 3:
 					case 4:
 					default:
+						break;
 
 					}
 
 				} while (option != 4);
 			case 4:
 				int optionSeller = 0;
-				
+
 				do {
 					System.out.println("=======================================");
 					System.out.println("1 - Sign up a student");
@@ -106,7 +115,7 @@ public class MainTest {
 					System.out.println("3 - Change my info");
 					System.out.println("4 - Exit");
 					System.out.println("=======================================");
-					
+
 					optionSeller = input.nextInt();
 
 					switch (optionSeller) {
@@ -119,8 +128,9 @@ public class MainTest {
 						double tuition = input.nextDouble();
 						System.out.println("Course: ");
 						String course = input.next();
-						
+
 						Student student = new Student(name, regFee, tuition, course);
+						students.add(student);
 						break;
 
 					case 2:

@@ -3,6 +3,7 @@ package test;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Random;
 import java.util.Scanner;
 
 import main.Course;
@@ -14,7 +15,7 @@ import main.Teacher;
 
 public class MainTest {
 	public static void main(String[] args) {
-
+		
 		Scanner input = new Scanner(System.in);
 
 		School school = new School();
@@ -26,7 +27,9 @@ public class MainTest {
 		List<Course> courses = new ArrayList<>();
 
 		int option = 0;
-
+		
+		
+		
 		do {
 			// MAIN MENU
 			System.out.println("=======================================");
@@ -94,6 +97,7 @@ public class MainTest {
 					
 					switch (optionSecretary) {
 					case 1:
+//						students.printStudent();
 						System.out.println(students);
 						break;
 					case 2:
@@ -112,7 +116,7 @@ public class MainTest {
 					System.out.println("=======================================");
 					System.out.println("1 - Sign up a student");
 					System.out.println("2 - See my sales commission");
-					System.out.println("3 - Change my info");
+//					System.out.println("3 - Change my info");
 					System.out.println("4 - Exit");
 					System.out.println("=======================================");
 
@@ -120,20 +124,34 @@ public class MainTest {
 
 					switch (optionSeller) {
 					case 1:
-						System.out.println("Name: ");
-						String name = input.next();
+//						System.out.println("Name: ");
+//						String name = input.next();
 						System.out.println("Registration Fee: ");
 						double regFee = input.nextDouble();
-						System.out.println("Tuition: ");
-						double tuition = input.nextDouble();
-						System.out.println("Course: ");
-						String course = input.next();
+//						System.out.println("Tuition: ");
+//						double tuition = input.nextDouble();
+//						System.out.println("Course: ");
+//						String course = input.next();
 
-						Student student = new Student(name, regFee, tuition, course);
+//						Student student = new Student(name, regFee, tuition, course);
+						Student student = new Student();
+						student.setId(student.generateId(new Random(), "123456789", 4));
+						student.setRegistrationFee(regFee);
+						student.printStudent();;
 						students.add(student);
 						break;
 
 					case 2:
+						System.out.println(students);
+						double totalComission = 0;
+						
+						for (Student element : students) {
+							totalComission += element.getRegistrationFee();
+						}
+						
+						
+						System.out.println(totalComission);
+						
 						break;
 					case 3:
 						break;
